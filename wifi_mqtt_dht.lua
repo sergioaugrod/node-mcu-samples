@@ -12,7 +12,7 @@ MQTT_PORT = 1883
 -- WiFi Connection
 wifi.setmode(wifi.STATION)
 -- After WiFi connection connect to MQTT
-wifi.sta.eventMonReg(wifi.STA_GOTIP, connect_mqtt)
+wifi.sta.eventMonReg(wifi.STA_GOTIP, function() connect_mqtt() end)
 wifi.sta.eventMonStart()
 wifi.sta.config(WIFI_USER, WIFI_PASSWORD)
 
